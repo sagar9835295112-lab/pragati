@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https:cloudflare.com"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRAGATISHEEL CLASSES</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white
+    }
+    header {
+      background: black;
+      color: red;
+      padding: 10px;
+      text-align: center;
+      width: 98.7%;
+    }
+    @media (max-width:600px){
+      header{
+        font-size: xx-small;
+        text-align: center;
+        width: 97.2%;
+        padding: 5.0px;
+      }
+    }
+    nav {
+      margin: 0;
+      padding: 10;
+      justify-content: center;
+      display: flex;
+      background-color:black;
+      width: 100%;
+    }
+     @media (max-width:600px){
+      nav{
+        font-size: x-small;
+        width: 100%;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      background:black;
+    }
+    ul :hover{
+      color:#c54e54;
+    }
+    ul li {
+      margin: 0;
+      padding: 10px;
+      display: inline-block;
+    }
+    ul li a {
+      color: red;
+    }
+    .dropdown {
+      display: none;
+    }
+    ul :hover .dropdown {
+      display:block;
+      position: absolute;
+    }
+
+    .dropdown ul li {
+      display: block;
+    }
+    .banner {
+      background-color: white;
+      height: 850px;
+      width: auto;
+      display: flex;
+      align-items: left;
+      justify-content: center;
+      color: rgb(223, 15, 15);
+      font-size: 2em;
+      font-weight: bold;
+    }
+    @media(max-width:600px){
+      .banner{
+        height: 201px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        top: 0;
+        width: 99%;
+      }
+      @media(max-width:600px){
+        footer{
+          font-size: x-small ;
+          width: 94.5%;
+      }
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>WELCOME TO PRAGATISHIL CLASSES</h1>
+    <h2>WHERE SUCCESS MEETS DISCIPLINE</h2>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#courses">Courses ▾</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#BSEB">BSEB</a></li>
+            <li><a href="#CBSE">CBSE</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner Section -->
+  <div>
+    <div class="banner">
+      <img src = "./pc3.jpeg" alt="pragatishil classes banner"/>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Pragatishil Classes | All Rights Reserved</p>
+    <p>Contact Us :- 9097530602</p>
+    <p> Email :- pragatishilclasses@gmail.com</p>
+  </footer>
+
+</body>
+</html>
