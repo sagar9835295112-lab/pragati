@@ -20,6 +20,7 @@
     }
     @media (max-width:600px){
       header{
+        background: white;
         font-size: xx-small;
         text-align: center;
         width: 97.2%;
@@ -36,6 +37,7 @@
     }
      @media (max-width:600px){
       nav{
+        background: white;
         font-size: x-small;
         width: 100%;
       }
@@ -45,6 +47,11 @@
       padding: 0;
       list-style-type: none;
       background:black;
+    }
+    @media (max-width:600px){
+      ul{
+        background: white;
+      }
     }
     ul :hover{
       color:#c54e54;
@@ -68,7 +75,7 @@
     .dropdown ul li {
       display: block;
     }
-    .banner {
+    .banner1 {
       background-color: white;
       height: 850px;
       width: auto;
@@ -79,14 +86,23 @@
       font-size: 2em;
       font-weight: bold;
     }
-    @media(max-width:600px){
-      .banner{
-        height: 201px;
-        width: 100%;
-        justify-content: center;
+    
+    
+    @media (max-width: 600px) {
+      .banner1 {display: none;}
+      .banner2 {display: flex !important;
+        flex-direction: column;
+        width: 100% !important;
+        height: auto !important; 
+        min-height: 200px;
       }
+      .banner2 {
+        max-width: 100%;
+        height: auto;
+      }
+     
     }
-
+  
     footer {
         background: #2c3e50;
         color: white;
@@ -95,11 +111,12 @@
         position: relative;
         top: 0;
         width: 99%;
+        box-sizing: border-box;
       }
-      @media(max-width:600px){
+      @media (max-width:600px) {
         footer{
           font-size: x-small ;
-          width: 94.5%;
+          width: 100%;
       }
     }
     
@@ -133,18 +150,25 @@
 
   <!-- Banner Section -->
   <div>
-    <div class="banner">
-      <img src = "./pc3.jpeg" alt="pragatishil classes banner"/>
+    <div class="banner1">
+      <img src = "pc3.jpeg" alt="pragatishil classes banner"/>
+    </div>
+  </div>
+  <div>
+    <div class="banner2">
+      <img src="pc4.jpeg"/>
     </div>
   </div>
 
 
   <!-- Footer -->
-  <footer>
+ <div>
+   <footer>
     <p>&copy; 2026 Pragatishil Classes | All Rights Reserved</p>
     <p>Contact Us :- 9097530602</p>
     <p> Email :- pragatishilclasses@gmail.com</p>
   </footer>
+ </div>
 
 </body>
 </html>
