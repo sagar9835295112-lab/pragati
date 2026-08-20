@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Apply online for BSEB or CBSE coaching at Pragatishil Classes.">
+		<title>Apply Online | Pragatishil Classes</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root { --navy: #12244a; --blue: #2164c2; --orange: #f28b37; --mist: #f3f7fc; --ink-soft: #5f6d83; --line: #dce5f1; }
+		* { box-sizing: border-box; }
+		body { margin: 0; background: var(--mist); color: var(--navy); font-family: 'DM Sans', 'Segoe UI', sans-serif; }
+		a { color: inherit; text-decoration: none; }
+		.container { width: min(760px, calc(100% - 32px)); margin: auto; }
+		header { background: var(--navy); color: #fff; padding: 22px 0; }
+		.brand { font: 700 1.3rem 'Space Grotesk', sans-serif; }
+		.brand span { color: #ffd166; }
+		main { padding: 54px 0 70px; }
+		.intro { margin-bottom: 28px; }
+		.kicker { color: var(--orange); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+		h1 { font: 700 clamp(2.1rem, 6vw, 3.5rem)/1.05 'Space Grotesk', sans-serif; letter-spacing: -.04em; margin: 12px 0; }
+		.intro p { color: var(--ink-soft); line-height: 1.7; margin: 0; }
+		.form-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 14px 35px rgba(18,36,74,.08); padding: clamp(22px, 5vw, 42px); }
+		.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; }
+		.field { display: flex; flex-direction: column; gap: 7px; }
+		.field.full { grid-column: 1 / -1; }
+		label { font-size: .82rem; font-weight: 700; }
+		input, select, textarea { border: 1px solid #cbd7e6; border-radius: 4px; color: var(--navy); font: inherit; padding: 12px; width: 100%; }
+		input:focus, select:focus, textarea:focus { border-color: var(--blue); outline: 3px solid rgba(33,100,194,.14); }
+		textarea { min-height: 94px; resize: vertical; }
+		button { background: var(--blue); border: 0; color: #fff; cursor: pointer; font: 700 .78rem 'DM Sans', sans-serif; letter-spacing: .06em; margin-top: 25px; padding: 15px 22px; text-transform: uppercase; }
+		button:hover { background: #184b95; }
+		.notice { background: #e7f6ed; border-left: 4px solid #23864b; color: #176236; margin-bottom: 22px; padding: 14px 16px; }
+		.back { color: var(--blue); display: inline-block; font-size: .8rem; font-weight: 700; margin-top: 22px; }
+		@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } .field.full { grid-column: auto; } }
+	</style>
+</head>
+<body>
+	<header><div class="container"><a class="brand" href="index.html">Pragatishil <span>Classes</span></a></div></header>
+	<main class="container">
+		<div class="intro"><div class="kicker">Admissions 2026-27</div><h1>Apply online.</h1><p>Choose your board and class, then complete your details. Our admissions team will contact you to confirm the next steps.</p></div>
+		<div class="notice" id="success" hidden role="status">Your application has been submitted successfully. We will contact you soon.</div>
+		<form class="form-card" action="submit_admission.php" method="post">
+			<div class="form-grid">
+				<div class="field"><label for="student_name">Student name *</label><input id="student_name" name="student_name" type="text" maxlength="100" required></div>
+				<div class="field"><label for="parent_name">Parent or guardian name *</label><input id="parent_name" name="parent_name" type="text" maxlength="100" required></div>
+				<div class="field"><label for="date_of_birth">Date of birth</label><input id="date_of_birth" name="date_of_birth" type="date"></div>
+				<div class="field"><label for="course">Choose course *</label><select id="course" name="course" required><option value="">Choose a course</option><option value="CBSE">CBSE</option><option value="BSEB">BSEB</option></select></div>
+				<div class="field"><label for="class_name">Class applying for *</label><select id="class_name" name="class_name" required disabled><option value="">Choose a course first</option></select></div>
+				<div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" maxlength="20" required></div>
+				<div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" maxlength="150"></div>
+				<div class="field full"><label for="previous_school">Previous school</label><input id="previous_school" name="previous_school" type="text" maxlength="150"></div>
+				<div class="field full"><label for="address">Address *</label><textarea id="address" name="address" maxlength="500" required></textarea></div>
+				<div class="field full"><label for="message">Additional information</label><textarea id="message" name="message" maxlength="1000" placeholder="Tell us anything we should know."></textarea></div>
+			</div>
+			<button type="submit">Submit application</button>
+		</form>
+		<a class="back" href="index.html">&larr; Back to Pragatishil Classes</a>
+	</main>
+	<script>
+		const course = document.getElementById('course');
+		const className = document.getElementById('class_name');
+		const classesByCourse = { CBSE: ['Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10'], BSEB: ['Class 8', 'Class 9', 'Class 10'] };
+		course.addEventListener('change', () => {
+			className.innerHTML = '<option value="">Choose a class</option>';
+			(classesByCourse[course.value] || []).forEach((classOption) => { className.add(new Option(classOption, classOption)); });
+			className.disabled = !course.value;
+		});
+		if (new URLSearchParams(window.location.search).get('submitted') === '1') document.getElementById('success').hidden = false;
+	</script>
+</body>
+</html>
